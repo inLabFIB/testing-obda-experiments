@@ -1,0 +1,128 @@
+@IRIConstraint :- IRI(x, y, u), IRI(x, y, v), u<>v
+PhysicalAbility(iri) :- IRI("ns:ns", v0, iri), src_Dystonia_c0(u0, v0), src_BrailleWatch_c0(u1, v1), src_PhysicalAbility_c0(u2, v2), v0=v1, v1=v2
+ListenDevice(iri) :- IRI("ns:ns", v0, iri), src_Hear_partially_c0(u0, v0), src_LowVision_c0(u1, v1), src_Talking_Thermometer_c0(u2, v2), src_ListenDevice_c0(u3, v3), v0=v1, v1=v2, v2=v3
+MobilityDevice(iri) :- IRI("ns:ns", v0, iri), src_TactileReading_c0(u0, v0), src_MobilityDevice_c0(u1, v1), v0=v1, not(Communication_Device(iri))
+Osteogensis_Imperfecta(iri) :- IRI("ns:ns", v0, iri), src_Ability_c0(u0, v0), src_Disability_c0(u1, v1), src_Osteogensis_Imperfecta_c0(u2, v2), v0=v1, v1=v2
+requiresAbility(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_assistsWith_c0(u0, v0), src_assistsWith_c1(u0, v1), src_Manual_Wheelchair_c0(u1, v2), src_Deafened_c0(u2, v3), src_requiresAbility_c0(u3, v4), src_requiresAbility_c1(u3, v5), v0=v2, v2=v3, v3=v4, v1=v5
+Poliomyelitis(iri) :- IRI("ns:ns", v0, iri), src_Talking_Thermometer_c0(u0, v0), src_Poliomyelitis_c0(u1, v1), v0=v1
+Talking_Thermometer(iri) :- IRI("ns:ns", v0, iri), src_MentalDisability_c0(u0, v0), src_Device_c0(u1, v1), src_Quadriplegia_c0(u2, v2), src_TelephoneAid_c0(u3, v3), src_Talking_Thermometer_c0(u4, v4), v0=v1, v1=v2, v2=v3, v3=v4
+Motorised_Wheelchair(iri) :- IRI("ns:ns", v0, iri), src_SpeechDisability_c0(u0, v0), src_Motorised_Wheelchair_c0(u1, v1), v0=v1
+Thing(iri) :- IRI("ns:ns", v0, iri), src_isAssistedBy_c0(u0, v0), src_Epilepsy_c0(u1, v1), src_Thing_c0(u2, v2), v0=v1, v1=v2
+goal() :- VisualDisability(x), PhysicalDisability(x)
+goal() :- VisualDisability(x), Scoliosis(x)
+goal() :- VisualDisability(x), Spina_Bifida(x)
+goal() :- VisualDisability(x), Osteogensis_Imperfecta(x)
+goal() :- VisualDisability(x), Achondroplasia(x)
+goal() :- Blind(x), PhysicalDisability(x)
+goal() :- VisualDisability(x), Poliomyelitis(x)
+goal() :- VisualDisability(x), Amputation(x)
+goal() :- LowVision(x), PhysicalDisability(x)
+goal() :- VisualDisability(x), Paraplegia(x)
+goal() :- VisualDisability(x), Guillaume_Barre(x)
+goal() :- VisualDisability(x), Kyphosis(x)
+goal() :- VisualDisability(x), Muscular_dystrophy(x)
+goal() :- VisualDisability(x), Quadriplegia(x)
+goal() :- VisualDisability(x), Cerebral_palsy(x)
+goal() :- VisualDisability(x), Multiple_sclerosis(x)
+goal() :- VisualDisability(x), Hemiplegia(x)
+goal() :- VisualDisability(x), Dystonia(x)
+goal() :- Blind(x), Scoliosis(x)
+goal() :- LowVision(x), Scoliosis(x)
+goal() :- Blind(x), Spina_Bifida(x)
+goal() :- LowVision(x), Spina_Bifida(x)
+goal() :- Blind(x), Osteogensis_Imperfecta(x)
+goal() :- LowVision(x), Osteogensis_Imperfecta(x)
+goal() :- Blind(x), Achondroplasia(x)
+goal() :- LowVision(x), Achondroplasia(x)
+goal() :- Blind(x), Poliomyelitis(x)
+goal() :- Blind(x), Amputation(x)
+goal() :- Blind(x), Paraplegia(x)
+goal() :- Blind(x), Guillaume_Barre(x)
+goal() :- Blind(x), Kyphosis(x)
+goal() :- Blind(x), Muscular_dystrophy(x)
+goal() :- Blind(x), Quadriplegia(x)
+goal() :- Blind(x), Cerebral_palsy(x)
+goal() :- Blind(x), Multiple_sclerosis(x)
+goal() :- Blind(x), Hemiplegia(x)
+goal() :- Blind(x), Dystonia(x)
+goal() :- LowVision(x), Poliomyelitis(x)
+goal() :- LowVision(x), Amputation(x)
+goal() :- LowVision(x), Paraplegia(x)
+goal() :- LowVision(x), Guillaume_Barre(x)
+goal() :- LowVision(x), Kyphosis(x)
+goal() :- LowVision(x), Muscular_dystrophy(x)
+goal() :- LowVision(x), Quadriplegia(x)
+goal() :- LowVision(x), Cerebral_palsy(x)
+goal() :- LowVision(x), Multiple_sclerosis(x)
+goal() :- LowVision(x), Hemiplegia(x)
+goal() :- LowVision(x), Dystonia(x)
+VisualDisability(iri) :- IRI("ns:ns", v0, iri), src_BrailleWritingDevice_c0(u0, v0), src_Amputation_c0(u1, v1), src_VisualDisability_c0(u2, v2), v0=v1, v1=v2, not(PhysicalDisability(iri)), not(SpeechDisability(iri))
+BrailleWritingDevice(iri) :- IRI("ns:ns", v0, iri), src_LowVision_c0(u0, v0), src_WritingDevice_c0(u1, v1), src_Multiple_sclerosis_c0(u2, v2), src_Scoliosis_c0(u3, v3), src_BrailleWritingDevice_c0(u4, v4), v0=v1, v1=v2, v2=v3, v3=v4
+isAffectedBy(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_Achondroplasia_c0(u0, v0), src_isAffectedBy_c1(u4, v1), src_Ability_c0(u1, v2), src_Hear_partially_c0(u2, v3), src_Talking_Thermometer_c0(u3, v4), src_isAffectedBy_c0(u4, v5), v0=v2, v2=v3, v3=v4, v4=v5
+SymbolBoard(iri) :- IRI("ns:ns", v0, iri), src_SensoryAbility_c0(u0, v0), src_Deafened_c0(u1, v1), src_Hear_c0(u2, v2), src_BraillePillOrganiser_c0(u3, v3), src_SymbolBoard_c0(u4, v4), v0=v1, v1=v2, v2=v3, v3=v4
+Hear(iri) :- IRI("ns:ns", v0, iri), src_Osteogensis_Imperfecta_c0(u0, v0), src_TactileAbility_c0(u1, v1), src_Manual_Wheelchair_c0(u2, v2), src_Hear_c0(u3, v3), v0=v1, v1=v2, v2=v3
+BatteryPowered_Wheelchair(iri) :- IRI("ns:ns", v0, iri), src_Guillaume_Barre_c0(u0, v0), src_BatteryPowered_Wheelchair_c0(u1, v1), v0=v1
+Foldable_Wheelchair(iri) :- IRI("ns:ns", v0, iri), src_BrailleAlarmClock_c0(u0, v0), src_Foldable_Wheelchair_c0(u1, v1), v0=v1
+See(iri) :- IRI("ns:ns", v0, iri), src_SpeechDevice_c0(u0, v0), src_ReadingDevice_c0(u1, v1), src_SymbolBoard_c0(u2, v2), src_Communication_Device_c0(u3, v3), src_See_c0(u4, v4), v0=v1, v1=v2, v2=v3, v3=v4
+Wheelchair(iri) :- IRI("ns:ns", v0, iri), src_requiresAbility_c0(u0, v0), src_Kyphosis_c0(u1, v1), src_Wheelchair_c0(u2, v2), v0=v1, v1=v2
+Muscular_dystrophy(iri) :- IRI("ns:ns", v0, iri), src_Hear_c0(u0, v0), src_Muscular_dystrophy_c0(u1, v1), v0=v1
+SpeechDisability(iri) :- IRI("ns:ns", v0, iri), src_BrailleWritingDevice_c0(u0, v0), src_SpeechDisability_c0(u1, v1), v0=v1
+MovementAbility(iri) :- IRI("ns:ns", v0, iri), src_Cerebral_palsy_c0(u0, v0), src_Epilepsy_c0(u1, v1), src_BatteryPowered_Wheelchair_c0(u2, v2), src_MovementAbility_c0(u3, v3), v0=v1, v1=v2, v2=v3
+ReadingDevice(iri) :- IRI("ns:ns", v0, iri), src_WritingDevice_c0(u0, v0), src_Communication_Device_c0(u1, v1), src_Multiple_sclerosis_c0(u2, v2), src_ReadingDevice_c0(u3, v3), v0=v1, v1=v2, v2=v3
+Guillaume_Barre(iri) :- IRI("ns:ns", v0, iri), src_PhysicalAbility_c0(u0, v0), src_Hear_partially_c0(u1, v1), src_Guillaume_Barre_c0(u2, v2), v0=v1, v1=v2
+LowerLimbMobility(iri) :- IRI("ns:ns", v0, iri), src_LightweightFoldable_Wheelchair_c0(u0, v0), src_BatteryPowered_Wheelchair_c0(u1, v1), src_LowerLimbMobility_c0(u2, v2), v0=v1, v1=v2
+TactileAbility(iri) :- IRI("ns:ns", v0, iri), src_BatteryPowered_Wheelchair_c0(u0, v0), src_LightweightFoldable_Wheelchair_c0(u1, v1), src_TelephoneAid_c0(u2, v2), src_TactileAbility_c0(u3, v3), v0=v1, v1=v2, v2=v3
+BraillePillOrganiser(iri) :- IRI("ns:ns", v0, iri), src_Autism_c0(u0, v0), src_Wheelchair_c0(u1, v1), src_Stuttering_c0(u2, v2), src_MobilityDevice_c0(u3, v3), src_BraillePillOrganiser_c0(u4, v4), v0=v1, v1=v2, v2=v3, v3=v4
+SensoryAbility(iri) :- IRI("ns:ns", v0, iri), src_Hear_c0(u0, v0), src_PhysicalDisability_c0(u1, v1), src_Little_or_No_Speech_c0(u2, v2), src_Osteogensis_Imperfecta_c0(u3, v3), src_SensoryAbility_c0(u4, v4), v0=v1, v1=v2, v2=v3, v3=v4, not(PhysicalAbility(iri))
+isAssistedBy(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_LowerLimbMobility_c0(u0, v0), src_isAssistedBy_c1(u3, v1), src_Dystonia_c0(u1, v2), src_SpeechDevice_c0(u2, v3), src_isAssistedBy_c0(u3, v4), v0=v2, v2=v3, v3=v4
+HearingDisability(iri) :- IRI("ns:ns", v0, iri), src_SightAbility_c0(u0, v0), src_MentalDisability_c0(u1, v1), src_HearingDisability_c0(u2, v2), v0=v1, v1=v2, not(SpeechDisability(iri)), not(VisualDisability(iri)), not(PhysicalDisability(iri))
+Achondroplasia(iri) :- IRI("ns:ns", v0, iri), src_SightAbility_c0(u0, v0), src_Autism_c0(u1, v1), src_LimbMobility_c0(u2, v2), src_Achondroplasia_c0(u3, v3), v0=v1, v1=v2, v2=v3
+AssistiveDevice(iri) :- IRI("ns:ns", v0, iri), src_Spina_Bifida_c0(u0, v0), src_TalkingReading_c0(u1, v1), src_SightAbility_c0(u2, v2), src_AssistiveDevice_c0(u3, v3), v0=v1, v1=v2, v2=v3
+Autism(iri) :- IRI("ns:ns", v0, iri), src_SensoryAbility_c0(u0, v0), src_BrailleWatch_c0(u1, v1), src_Autism_c0(u2, v2), v0=v1, v1=v2
+HearingAbility(iri) :- IRI("ns:ns", v0, iri), src_Foldable_Wheelchair_c0(u0, v0), src_Amputation_c0(u1, v1), src_LightweightFoldable_Wheelchair_c0(u2, v2), src_HearingAbility_c0(u3, v3), v0=v1, v1=v2, v2=v3
+Deafened(iri) :- IRI("ns:ns", v0, iri), src_PhysicalDisability_c0(u0, v0), src_See_c0(u1, v1), src_Deafened_c0(u2, v2), v0=v1, v1=v2
+LimbMobility(iri) :- IRI("ns:ns", v0, iri), src_ListenDevice_c0(u0, v0), src_Little_or_No_Speech_c0(u1, v1), src_LimbMobility_c0(u2, v2), v0=v1, v1=v2
+BrailleWatch(iri) :- IRI("ns:ns", v0, iri), src_MobilityDevice_c0(u0, v0), src_Kyphosis_c0(u1, v1), src_BatteryPowered_Wheelchair_c0(u2, v2), src_SpeechDisability_c0(u3, v3), src_BrailleWatch_c0(u4, v4), v0=v1, v1=v2, v2=v3, v3=v4
+Little_or_No_Speech(iri) :- IRI("ns:ns", v0, iri), src_BatteryPowered_Wheelchair_c0(u0, v0), src_See_partially_c0(u1, v1), src_Little_or_No_Speech_c0(u2, v2), v0=v1, v1=v2
+Dystonia(iri) :- IRI("ns:ns", v0, iri), src_ReadingDevice_c0(u0, v0), src_requiresAbility_c0(u1, v1), src_Manual_Wheelchair_c0(u2, v2), src_TelephoneAid_c0(u3, v3), src_Dystonia_c0(u4, v4), v0=v1, v1=v2, v2=v3, v3=v4
+See_partially(iri) :- IRI("ns:ns", v0, iri), src_SightAbility_c0(u0, v0), src_TelephoneAid_c0(u1, v1), src_Talking_Thermometer_c0(u2, v2), src_Hemiplegia_c0(u3, v3), src_See_partially_c0(u4, v4), v0=v1, v1=v2, v2=v3, v3=v4
+PhysicalDisability(iri) :- IRI("ns:ns", v0, iri), src_Dystonia_c0(u0, v0), src_Paraplegia_c0(u1, v1), src_PhysicalDisability_c0(u2, v2), v0=v1, v1=v2
+TelephoneAid(iri) :- IRI("ns:ns", v0, iri), src_Muscular_dystrophy_c0(u0, v0), src_Poliomyelitis_c0(u1, v1), src_Blind_c0(u2, v2), src_TelephoneAid_c0(u3, v3), v0=v1, v1=v2, v2=v3
+LowVision(iri) :- IRI("ns:ns", v0, iri), src_MobilityDevice_c0(u0, v0), src_UpperLimbMobility_c0(u1, v1), src_LowVision_c0(u2, v2), v0=v1, v1=v2
+assistsWith(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_VisualDisability_c0(u0, v0), src_assistsWith_c1(u2, v1), src_TalkingReading_c0(u1, v2), src_assistsWith_c0(u2, v3), v0=v2, v2=v3
+Paraplegia(iri) :- IRI("ns:ns", v0, iri), src_FaceToFaceCommunicationDevice_c0(u0, v0), src_Little_or_No_Speech_c0(u1, v1), src_Paraplegia_c0(u2, v2), v0=v1, v1=v2
+Scoliosis(iri) :- IRI("ns:ns", v0, iri), src_Amputation_c0(u0, v0), src_BrailleAlarmClock_c0(u1, v1), src_Blind_c0(u2, v2), src_Dystonia_c0(u3, v3), src_Scoliosis_c0(u4, v4), v0=v1, v1=v2, v2=v3, v3=v4
+Amputation(iri) :- IRI("ns:ns", v0, iri), src_SpeechDevice_c0(u0, v0), src_HearingDisability_c0(u1, v1), src_SymbolBoard_c0(u2, v2), src_Amputation_c0(u3, v3), v0=v1, v1=v2, v2=v3
+SightAbility(iri) :- IRI("ns:ns", v0, iri), src_VisualDisability_c0(u0, v0), src_assistsWith_c0(u1, v1), src_Amputation_c0(u2, v2), src_Hear_partially_c0(u3, v3), src_SightAbility_c0(u4, v4), v0=v1, v1=v2, v2=v3, v3=v4
+Ability(iri) :- IRI("ns:ns", v0, iri), src_UpperLimbMobility_c0(u0, v0), src_isAssistedBy_c0(u1, v1), src_Kyphosis_c0(u2, v2), src_Ability_c0(u3, v3), v0=v1, v1=v2, v2=v3
+IntellectualDisability(iri) :- IRI("ns:ns", v0, iri), src_SpeechDevice_c0(u0, v0), src_BatteryPowered_Wheelchair_c0(u1, v1), src_IntellectualDisability_c0(u2, v2), v0=v1, v1=v2
+TalkingReading(iri) :- IRI("ns:ns", v0, iri), src_SymbolBoard_c0(u0, v0), src_Little_or_No_Speech_c0(u1, v1), src_Amputation_c0(u2, v2), src_TalkingReading_c0(u3, v3), v0=v1, v1=v2, v2=v3
+FaceToFaceCommunicationDevice(iri) :- IRI("ns:ns", v0, iri), src_TelephoneAid_c0(u0, v0), src_HearingAbility_c0(u1, v1), src_affects_c0(u2, v2), src_PhysicalAbility_c0(u3, v3), src_FaceToFaceCommunicationDevice_c0(u4, v4), v0=v1, v1=v2, v2=v3, v3=v4
+Device(iri) :- IRI("ns:ns", v0, iri), src_See_c0(u0, v0), src_Ability_c0(u1, v1), src_Device_c0(u2, v2), v0=v1, v1=v2, not(Ability(iri))
+Deaf(iri) :- IRI("ns:ns", v0, iri), src_Reach_c0(u0, v0), src_Hear_c0(u1, v1), src_PhysicalDisability_c0(u2, v2), src_Deaf_c0(u3, v3), v0=v1, v1=v2, v2=v3
+Quadriplegia(iri) :- IRI("ns:ns", v0, iri), src_SightAbility_c0(u0, v0), src_Quadriplegia_c0(u1, v1), v0=v1
+Manual_Wheelchair(iri) :- IRI("ns:ns", v0, iri), src_Hard_of_hearing_c0(u0, v0), src_Manual_Wheelchair_c0(u1, v1), v0=v1
+Kyphosis(iri) :- IRI("ns:ns", v0, iri), src_Dystonia_c0(u0, v0), src_Hear_partially_c0(u1, v1), src_PhysicalAbility_c0(u2, v2), src_Kyphosis_c0(u3, v3), v0=v1, v1=v2, v2=v3
+Stuttering(iri) :- IRI("ns:ns", v0, iri), src_Disability_c0(u0, v0), src_Device_c0(u1, v1), src_Scoliosis_c0(u2, v2), src_Stuttering_c0(u3, v3), v0=v1, v1=v2, v2=v3
+Epilepsy(iri) :- IRI("ns:ns", v0, iri), src_LowerLimbMobility_c0(u0, v0), src_Motorised_Wheelchair_c0(u1, v1), src_Epilepsy_c0(u2, v2), v0=v1, v1=v2
+Lightweight_Wheelchair(iri) :- IRI("ns:ns", v0, iri), src_LimbMobility_c0(u0, v0), src_Stuttering_c0(u1, v1), src_Dystonia_c0(u2, v2), src_VisualDisability_c0(u3, v3), src_Lightweight_Wheelchair_c0(u4, v4), v0=v1, v1=v2, v2=v3, v3=v4
+SpeechAbility(iri) :- IRI("ns:ns", v0, iri), src_Cerebral_palsy_c0(u0, v0), src_SightAbility_c0(u1, v1), src_See_c0(u2, v2), src_Spina_Bifida_c0(u3, v3), src_SpeechAbility_c0(u4, v4), v0=v1, v1=v2, v2=v3, v3=v4, not(PhysicalAbility(iri)), not(SensoryAbility(iri))
+WritingDevice(iri) :- IRI("ns:ns", v0, iri), src_TactileAbility_c0(u0, v0), src_WritingDevice_c0(u1, v1), v0=v1
+Disability(iri) :- IRI("ns:ns", v0, iri), src_Poliomyelitis_c0(u0, v0), src_Stuttering_c0(u1, v1), src_LightweightFoldable_Wheelchair_c0(u2, v2), src_Disability_c0(u3, v3), v0=v1, v1=v2, v2=v3, not(Device(iri))
+Hemiplegia(iri) :- IRI("ns:ns", v0, iri), src_See_c0(u0, v0), src_Ability_c0(u1, v1), src_AssistiveDevice_c0(u2, v2), src_VisualDisability_c0(u3, v3), src_Hemiplegia_c0(u4, v4), v0=v1, v1=v2, v2=v3, v3=v4
+LightweightFoldable_Wheelchair(iri) :- IRI("ns:ns", v0, iri), src_BrailleAlarmClock_c0(u0, v0), src_LightweightFoldable_Wheelchair_c0(u1, v1), v0=v1
+Spina_Bifida(iri) :- IRI("ns:ns", v0, iri), src_Foldable_Wheelchair_c0(u0, v0), src_Spina_Bifida_c0(u1, v1), v0=v1
+Communication_Device(iri) :- IRI("ns:ns", v0, iri), src_Blind_c0(u0, v0), src_TactileReading_c0(u1, v1), src_Spina_Bifida_c0(u2, v2), src_Communication_Device_c0(u3, v3), v0=v1, v1=v2, v2=v3
+Blind(iri) :- IRI("ns:ns", v0, iri), src_SymbolBoard_c0(u0, v0), src_Foldable_Wheelchair_c0(u1, v1), src_ReadingDevice_c0(u2, v2), src_Blind_c0(u3, v3), v0=v1, v1=v2, v2=v3
+Reach(iri) :- IRI("ns:ns", v0, iri), src_PhysicalDisability_c0(u0, v0), src_UpperLimbMobility_c0(u1, v1), src_LowerLimbMobility_c0(u2, v2), src_Reach_c0(u3, v3), v0=v1, v1=v2, v2=v3
+Cerebral_palsy(iri) :- IRI("ns:ns", v0, iri), src_BrailleWritingDevice_c0(u0, v0), src_Deaf_c0(u1, v1), src_Cerebral_palsy_c0(u2, v2), v0=v1, v1=v2
+BrailleAlarmClock(iri) :- IRI("ns:ns", v0, iri), src_Kyphosis_c0(u0, v0), src_BrailleAlarmClock_c0(u1, v1), v0=v1
+affects(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_FaceToFaceCommunicationDevice_c0(u0, v0), src_affects_c1(u1, v1), src_affects_c0(u1, v2), v0=v2
+UpperLimbMobility(iri) :- IRI("ns:ns", v0, iri), src_Lightweight_Wheelchair_c0(u0, v0), src_See_partially_c0(u1, v1), src_UpperLimbMobility_c0(u2, v2), v0=v1, v1=v2
+FaceToFaceCommunicationSoftware(iri) :- IRI("ns:ns", v0, iri), src_MovementAbility_c0(u0, v0), src_FaceToFaceCommunicationSoftware_c0(u1, v1), v0=v1
+Multiple_sclerosis(iri) :- IRI("ns:ns", v0, iri), src_Thing_c0(u0, v0), src_Multiple_sclerosis_c0(u1, v1), v0=v1
+SpeechDevice(iri) :- IRI("ns:ns", v0, iri), src_LowVision_c0(u0, v0), src_SpeechDevice_c0(u1, v1), v0=v1
+Hard_of_hearing(iri) :- IRI("ns:ns", v0, iri), src_FaceToFaceCommunicationDevice_c0(u0, v0), src_Guillaume_Barre_c0(u1, v1), src_affects_c0(u2, v2), src_isAffectedBy_c0(u3, v3), src_Hard_of_hearing_c0(u4, v4), src_affects_c1(u2, v5), src_isAffectedBy_c1(u3, v6), v0=v1, v1=v2, v2=v3, v3=v4, v5=v6
+MentalDisability(iri) :- IRI("ns:ns", v0, iri), src_Lightweight_Wheelchair_c0(u0, v0), src_TactileReading_c0(u1, v1), src_MentalDisability_c0(u2, v2), v0=v1, v1=v2, not(PhysicalDisability(iri)), not(HearingDisability(iri))
+Hear_partially(iri) :- IRI("ns:ns", v0, iri), src_Little_or_No_Speech_c0(u0, v0), src_Poliomyelitis_c0(u1, v1), src_FaceToFaceCommunicationSoftware_c0(u2, v2), src_Hear_partially_c0(u3, v3), v0=v1, v1=v2, v2=v3
+TactileReading(iri) :- IRI("ns:ns", v0, iri), src_Paraplegia_c0(u0, v0), src_TactileReading_c0(u1, v1), v0=v1

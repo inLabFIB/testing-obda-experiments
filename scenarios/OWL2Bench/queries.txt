@@ -1,0 +1,5 @@
+Q1(0,1) :- isAdvisedBy(0,1)
+Q2(0,1) :- Student(0),isStudentOf(0,1),isPartOf(1,2),hasCollegeDiscipline(2,3),Engineering(3)
+Q3(0,1) :- isAffiliatedOrganizationOf(0,1)
+Q4(0) :- hasCollegeDiscipline(0,1),NonScience(1)
+Q5(0) :- Student(0),Organization(1),hasDean(1,2),teachesCourse(2,3),takesCourse(0,3)

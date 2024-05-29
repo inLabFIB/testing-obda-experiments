@@ -1,0 +1,36 @@
+@1 :- IRI(x, y, u), IRI(x, y, v), u<>v
+@2 :- PhysicalPerson(x), LegalPerson(x)
+@3 :- PhysicalPerson(x), Company(x)
+@4 :- PhysicalPerson(x), belongsToCompany(unfTGD0, x)
+@5 :- PhysicalPerson(x), hasStock(x, unfTGD0)
+isExecutedBy(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_isListedIn_c0(u0, v0), src_isListedIn_c1(u0, v1), src_isTradedIn_c0(u1, v2), src_inverseofhasAddress_c0(u2, v3), src_isExecutedFor_c0(u3, v4), src_isExecutedBy_c0(u4, v5), src_isTradedIn_c1(u1, v6), src_inverseofhasAddress_c1(u2, v7), src_isExecutedFor_c1(u3, v8), src_isExecutedBy_c1(u4, v9), v0=v2, v2=v3, v3=v4, v4=v5, v1=v6, v6=v7, v7=v8, v8=v9
+Company(iri) :- IRI("ns:ns", v0, iri), src_StockExchangeMember_c0(u0, v0), src_StockBroker_c0(u1, v1), src_Thing_c0(u2, v2), src_hasAddress_c0(u3, v3), src_Company_c0(u4, v4), v0=v1, v1=v2, v2=v3, v3=v4
+Address(iri) :- IRI("ns:ns", v0, iri), src_StockTrader_c0(u0, v0), src_Acquisition_c0(u1, v1), src_Address_c0(u2, v2), v0=v1, v1=v2
+listsStock(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_FinantialInstrument_c0(u0, v0), src_listsStock_c1(u3, v1), src_Address_c0(u1, v2), src_StockTrader_c0(u2, v3), src_listsStock_c0(u3, v4), v0=v2, v2=v3, v3=v4
+StockExchangeMember(iri) :- IRI("ns:ns", v0, iri), src_StockExchangeList_c0(u0, v0), src_Company_c0(u1, v1), src_isExecutedBy_c0(u2, v2), src_StockTrader_c0(u3, v3), src_StockExchangeMember_c0(u4, v4), v0=v1, v1=v2, v2=v3, v3=v4
+inverseofhasAddress(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_Acquisition_c0(u0, v0), src_isExecutedBy_c1(u1, v1), src_isExecutedBy_c0(u1, v2), src_Thing_c0(u2, v3), src_isTradedIn_c0(u3, v4), src_inverseofhasAddress_c0(u4, v5), src_isTradedIn_c1(u3, v6), src_inverseofhasAddress_c1(u4, v7), v0=v2, v2=v3, v3=v4, v4=v5, v1=v6, v6=v7
+tradesOnBehalfOf(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_hasAddress_c0(u0, v0), src_hasAddress_c1(u0, v1), src_Company_c0(u1, v2), src_tradesOnBehalfOf_c0(u2, v3), src_tradesOnBehalfOf_c1(u2, v4), v0=v2, v2=v3, v1=v4
+StockTrader(iri) :- IRI("ns:ns", v0, iri), src_Company_c0(u0, v0), src_StockTrader_c0(u1, v1), v0=v1
+Thing(iri) :- IRI("ns:ns", v0, iri), src_Stock_c0(u0, v0), src_Thing_c0(u1, v1), v0=v1
+hasStock(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_LegalPerson_c0(u0, v0), src_isExecutedBy_c1(u1, v1), src_isExecutedBy_c0(u1, v2), src_hasStock_c0(u2, v3), src_hasStock_c1(u2, v4), v0=v2, v2=v3, v1=v4
+StockExchangeList(iri) :- IRI("ns:ns", v0, iri), src_inverseofhasAddress_c0(u0, v0), src_StockExchangeMember_c0(u1, v1), src_StockExchangeList_c0(u2, v2), v0=v1, v1=v2
+PhysicalPerson(iri) :- IRI("ns:ns", v0, iri), src_StockExchangeList_c0(u0, v0), src_usesBroker_c0(u1, v1), src_listsStock_c0(u2, v2), src_involvesInstrument_c0(u3, v3), src_PhysicalPerson_c0(u4, v4), src_usesBroker_c1(u1, v5), src_listsStock_c1(u2, v6), src_involvesInstrument_c1(u3, v7), v0=v1, v1=v2, v2=v3, v3=v4, v5=v6, v6=v7, not(LegalPerson(iri))
+goal() :- PhysicalPerson(x0)
+involvesInstrument(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_Acquisition_c0(u0, v0), src_involvesInstrument_c1(u2, v1), src_StockExchangeMember_c0(u1, v2), src_involvesInstrument_c0(u2, v3), v0=v2, v2=v3
+isExecutedFor(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_inverseofhasAddress_c0(u0, v0), src_inverseofhasAddress_c1(u0, v1), src_involvesInstrument_c0(u1, v2), src_Person_c0(u2, v3), src_hasStock_c0(u3, v4), src_isExecutedFor_c0(u4, v5), src_involvesInstrument_c1(u1, v6), src_hasStock_c1(u3, v7), src_isExecutedFor_c1(u4, v8), v0=v2, v2=v3, v3=v4, v4=v5, v1=v6, v6=v7, v7=v8
+Acquisition(iri) :- IRI("ns:ns", v0, iri), src_listsStock_c0(u0, v0), src_inverseofhasAddress_c0(u1, v1), src_Address_c0(u2, v2), src_Acquisition_c0(u3, v3), src_listsStock_c1(u0, v4), src_inverseofhasAddress_c1(u1, v5), v0=v1, v1=v2, v2=v3, v4=v5
+Transaction(iri) :- IRI("ns:ns", v0, iri), src_StockExchangeMember_c0(u0, v0), src_Transaction_c0(u1, v1), v0=v1
+Offer(iri) :- IRI("ns:ns", v0, iri), src_listsStock_c0(u0, v0), src_StockExchangeMember_c0(u1, v1), src_Offer_c0(u2, v2), v0=v1, v1=v2
+Person(iri) :- IRI("ns:ns", v0, iri), src_Thing_c0(u0, v0), src_Person_c0(u1, v1), v0=v1
+Stock(iri) :- IRI("ns:ns", v0, iri), src_Thing_c0(u0, v0), src_Person_c0(u1, v1), src_involvesInstrument_c0(u2, v2), src_FinantialInstrument_c0(u3, v3), src_Stock_c0(u4, v4), v0=v1, v1=v2, v2=v3, v3=v4
+hasAddress(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_Offer_c0(u0, v0), src_hasAddress_c1(u1, v1), src_hasAddress_c0(u1, v2), v0=v2
+FinantialInstrument(iri) :- IRI("ns:ns", v0, iri), src_Offer_c0(u0, v0), src_involvesInstrument_c0(u1, v1), src_StockExchangeList_c0(u2, v2), src_LegalPerson_c0(u3, v3), src_FinantialInstrument_c0(u4, v4), v0=v1, v1=v2, v2=v3, v3=v4
+belongsToCompany(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_StockExchangeMember_c0(u0, v0), src_tradesOnBehalfOf_c1(u3, v1), src_Thing_c0(u1, v2), src_Trader_c0(u2, v3), src_tradesOnBehalfOf_c0(u3, v4), src_belongsToCompany_c0(u4, v5), src_belongsToCompany_c1(u4, v6), v0=v2, v2=v3, v3=v4, v4=v5, v1=v6
+Trader(iri) :- IRI("ns:ns", v0, iri), src_Transaction_c0(u0, v0), src_Acquisition_c0(u1, v1), src_StockTrader_c0(u2, v2), src_Trader_c0(u3, v3), v0=v1, v1=v2, v2=v3
+usesBroker(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_Person_c0(u0, v0), src_usesBroker_c1(u1, v1), src_usesBroker_c0(u1, v2), v0=v2
+LegalPerson(iri) :- IRI("ns:ns", v0, iri), src_involvesInstrument_c0(u0, v0), src_Acquisition_c0(u1, v1), src_LegalPerson_c0(u2, v2), v0=v1, v1=v2
+StockBroker(iri) :- IRI("ns:ns", v0, iri), src_isExecutedFor_c0(u0, v0), src_StockTrader_c0(u1, v1), src_Company_c0(u2, v2), src_isListedIn_c0(u3, v3), src_StockBroker_c0(u4, v4), src_isExecutedFor_c1(u0, v5), src_isListedIn_c1(u3, v6), v0=v1, v1=v2, v2=v3, v3=v4, v5=v6
+isTradedIn(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_isListedIn_c0(u0, v0), src_isListedIn_c1(u0, v1), src_Company_c0(u1, v2), src_Thing_c0(u2, v3), src_isTradedIn_c0(u3, v4), src_isTradedIn_c1(u3, v5), v0=v2, v2=v3, v3=v4, v1=v5
+isListedIn(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_isTradedIn_c0(u0, v0), src_isTradedIn_c1(u0, v1), src_isListedIn_c0(u1, v2), src_isListedIn_c1(u1, v3), v0=v2, v1=v3
+Investor(iri) :- IRI("ns:ns", v0, iri), src_LegalPerson_c0(u0, v0), src_Investor_c0(u1, v1), v0=v1
+Dealer(iri) :- IRI("ns:ns", v0, iri), src_StockExchangeList_c0(u0, v0), src_listsStock_c0(u1, v1), src_PhysicalPerson_c0(u2, v2), src_Dealer_c0(u3, v3), v0=v1, v1=v2, v2=v3
