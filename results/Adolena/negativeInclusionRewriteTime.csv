@@ -1,0 +1,4 @@
+Ontology name,Experiment Type,Negative Inclusion Rewrite Time (ms)
+Adolena,INCONSISTENCY_THREAT,0
+Adolena,PREDICATE_SAT,3623
+Adolena,QUERY_SAT,3831

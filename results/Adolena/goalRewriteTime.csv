@@ -1,0 +1,102 @@
+Ontology name,Experiment Type,Experiment Name,Goal Rewrite Time (ms)
+Adolena,INCONSISTENCY_THREAT,"SpeechDisability(x), HearingDisability(x)",8
+Adolena,INCONSISTENCY_THREAT,"MobilityDevice(x), Communication_Device(x)",81
+Adolena,INCONSISTENCY_THREAT,"SpeechAbility(x), SensoryAbility(x)",3
+Adolena,INCONSISTENCY_THREAT,"SpeechAbility(x), PhysicalAbility(x)",2
+Adolena,INCONSISTENCY_THREAT,"SpeechDisability(x), MentalDisability(x)",5
+Adolena,INCONSISTENCY_THREAT,"Device(x), Ability(x)",756
+Adolena,INCONSISTENCY_THREAT,"VisualDisability(x), MentalDisability(x)",4
+Adolena,INCONSISTENCY_THREAT,"Disability(x), Device(x)",2093
+Adolena,INCONSISTENCY_THREAT,"VisualDisability(x), SpeechDisability(x)",6
+Adolena,INCONSISTENCY_THREAT,"MentalDisability(x), HearingDisability(x)",6
+Adolena,INCONSISTENCY_THREAT,"PhysicalDisability(x), MentalDisability(x)",250
+Adolena,INCONSISTENCY_THREAT,"Disability(x), Ability(x)",773
+Adolena,INCONSISTENCY_THREAT,"PhysicalDisability(x), HearingDisability(x)",31
+Adolena,INCONSISTENCY_THREAT,"SensoryAbility(x), PhysicalAbility(x)",78
+Adolena,INCONSISTENCY_THREAT,"VisualDisability(x), HearingDisability(x)",7
+Adolena,INCONSISTENCY_THREAT,"SpeechDisability(x), PhysicalDisability(x)",58
+Adolena,INCONSISTENCY_THREAT,"VisualDisability(x), PhysicalDisability(x)",42
+Adolena,PREDICATE_SAT,PhysicalAbility,4
+Adolena,PREDICATE_SAT,ListenDevice,2
+Adolena,PREDICATE_SAT,PhysicalDisability,6
+Adolena,PREDICATE_SAT,TelephoneAid,1
+Adolena,PREDICATE_SAT,MobilityDevice,3
+Adolena,PREDICATE_SAT,assistsWith,21
+Adolena,PREDICATE_SAT,LowVision,5
+Adolena,PREDICATE_SAT,Paraplegia,0
+Adolena,PREDICATE_SAT,requiresAbility,4
+Adolena,PREDICATE_SAT,Osteogensis_Imperfecta,0
+Adolena,PREDICATE_SAT,Scoliosis,1
+Adolena,PREDICATE_SAT,Poliomyelitis,1
+Adolena,PREDICATE_SAT,Amputation,1
+Adolena,PREDICATE_SAT,Talking_Thermometer,0
+Adolena,PREDICATE_SAT,Motorised_Wheelchair,1
+Adolena,PREDICATE_SAT,Thing,12
+Adolena,PREDICATE_SAT,SightAbility,0
+Adolena,PREDICATE_SAT,Ability,5
+Adolena,PREDICATE_SAT,IntellectualDisability,0
+Adolena,PREDICATE_SAT,TalkingReading,0
+Adolena,PREDICATE_SAT,FaceToFaceCommunicationDevice,1
+Adolena,PREDICATE_SAT,Deaf,0
+Adolena,PREDICATE_SAT,VisualDisability,0
+Adolena,PREDICATE_SAT,Device,7
+Adolena,PREDICATE_SAT,isAffectedBy,17
+Adolena,PREDICATE_SAT,BrailleWritingDevice,0
+Adolena,PREDICATE_SAT,SymbolBoard,0
+Adolena,PREDICATE_SAT,Quadriplegia,0
+Adolena,PREDICATE_SAT,Hear,0
+Adolena,PREDICATE_SAT,BatteryPowered_Wheelchair,0
+Adolena,PREDICATE_SAT,Foldable_Wheelchair,1
+Adolena,PREDICATE_SAT,See,0
+Adolena,PREDICATE_SAT,Manual_Wheelchair,1
+Adolena,PREDICATE_SAT,Wheelchair,2
+Adolena,PREDICATE_SAT,Muscular_dystrophy,0
+Adolena,PREDICATE_SAT,SpeechDisability,2
+Adolena,PREDICATE_SAT,Kyphosis,1
+Adolena,PREDICATE_SAT,MovementAbility,2
+Adolena,PREDICATE_SAT,Stuttering,1
+Adolena,PREDICATE_SAT,Epilepsy,1
+Adolena,PREDICATE_SAT,ReadingDevice,1
+Adolena,PREDICATE_SAT,Lightweight_Wheelchair,1
+Adolena,PREDICATE_SAT,SpeechAbility,0
+Adolena,PREDICATE_SAT,WritingDevice,3
+Adolena,PREDICATE_SAT,Disability,15
+Adolena,PREDICATE_SAT,Guillaume_Barre,1
+Adolena,PREDICATE_SAT,LowerLimbMobility,1
+Adolena,PREDICATE_SAT,TactileAbility,0
+Adolena,PREDICATE_SAT,LightweightFoldable_Wheelchair,1
+Adolena,PREDICATE_SAT,Hemiplegia,0
+Adolena,PREDICATE_SAT,BraillePillOrganiser,0
+Adolena,PREDICATE_SAT,SensoryAbility,2
+Adolena,PREDICATE_SAT,Spina_Bifida,0
+Adolena,PREDICATE_SAT,Communication_Device,5
+Adolena,PREDICATE_SAT,Blind,1
+Adolena,PREDICATE_SAT,Reach,1
+Adolena,PREDICATE_SAT,Cerebral_palsy,1
+Adolena,PREDICATE_SAT,BrailleAlarmClock,0
+Adolena,PREDICATE_SAT,isAssistedBy,14
+Adolena,PREDICATE_SAT,affects,19
+Adolena,PREDICATE_SAT,FaceToFaceCommunicationSoftware,0
+Adolena,PREDICATE_SAT,UpperLimbMobility,1
+Adolena,PREDICATE_SAT,HearingDisability,2
+Adolena,PREDICATE_SAT,Achondroplasia,1
+Adolena,PREDICATE_SAT,AssistiveDevice,5
+Adolena,PREDICATE_SAT,Multiple_sclerosis,1
+Adolena,PREDICATE_SAT,Autism,1
+Adolena,PREDICATE_SAT,SpeechDevice,1
+Adolena,PREDICATE_SAT,Hard_of_hearing,1
+Adolena,PREDICATE_SAT,HearingAbility,0
+Adolena,PREDICATE_SAT,MentalDisability,0
+Adolena,PREDICATE_SAT,Deafened,0
+Adolena,PREDICATE_SAT,Hear_partially,0
+Adolena,PREDICATE_SAT,LimbMobility,1
+Adolena,PREDICATE_SAT,BrailleWatch,0
+Adolena,PREDICATE_SAT,Little_or_No_Speech,0
+Adolena,PREDICATE_SAT,TactileReading,1
+Adolena,PREDICATE_SAT,Dystonia,0
+Adolena,PREDICATE_SAT,See_partially,1
+Adolena,QUERY_SAT,Q1,47
+Adolena,QUERY_SAT,Q2,46
+Adolena,QUERY_SAT,Q3,201
+Adolena,QUERY_SAT,Q4,634
+Adolena,QUERY_SAT,Q5,3174

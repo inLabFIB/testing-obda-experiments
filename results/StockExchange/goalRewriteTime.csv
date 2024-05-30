@@ -1,0 +1,37 @@
+Ontology name,Experiment Type,Experiment Name,Goal Rewrite Time (ms)
+StockExchange,INCONSISTENCY_THREAT,"PhysicalPerson(x), LegalPerson(x)",0
+StockExchange,PREDICATE_SAT,hasAddress,4
+StockExchange,PREDICATE_SAT,isExecutedBy,2
+StockExchange,PREDICATE_SAT,Company,0
+StockExchange,PREDICATE_SAT,FinantialInstrument,2
+StockExchange,PREDICATE_SAT,Address,1
+StockExchange,PREDICATE_SAT,listsStock,0
+StockExchange,PREDICATE_SAT,StockExchangeMember,1
+StockExchange,PREDICATE_SAT,inverseofhasAddress,5
+StockExchange,PREDICATE_SAT,tradesOnBehalfOf,1
+StockExchange,PREDICATE_SAT,StockTrader,1
+StockExchange,PREDICATE_SAT,belongsToCompany,1
+StockExchange,PREDICATE_SAT,Thing,4
+StockExchange,PREDICATE_SAT,hasStock,0
+StockExchange,PREDICATE_SAT,StockExchangeList,1
+StockExchange,PREDICATE_SAT,PhysicalPerson,0
+StockExchange,PREDICATE_SAT,Trader,1
+StockExchange,PREDICATE_SAT,involvesInstrument,1
+StockExchange,PREDICATE_SAT,isExecutedFor,0
+StockExchange,PREDICATE_SAT,usesBroker,1
+StockExchange,PREDICATE_SAT,LegalPerson,2
+StockExchange,PREDICATE_SAT,StockBroker,0
+StockExchange,PREDICATE_SAT,Acquisition,0
+StockExchange,PREDICATE_SAT,isTradedIn,0
+StockExchange,PREDICATE_SAT,Transaction,0
+StockExchange,PREDICATE_SAT,Offer,0
+StockExchange,PREDICATE_SAT,isListedIn,0
+StockExchange,PREDICATE_SAT,Investor,1
+StockExchange,PREDICATE_SAT,Person,3
+StockExchange,PREDICATE_SAT,Stock,0
+StockExchange,PREDICATE_SAT,Dealer,0
+StockExchange,QUERY_SAT,Q1,1
+StockExchange,QUERY_SAT,Q2,41
+StockExchange,QUERY_SAT,Q3,547
+StockExchange,QUERY_SAT,Q4,1824
+StockExchange,QUERY_SAT,Q5,23519
