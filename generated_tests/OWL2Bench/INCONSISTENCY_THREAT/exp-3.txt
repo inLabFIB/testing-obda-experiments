@@ -19,8 +19,8 @@ AeronauticalEngineering(iri) :- IRI("ns:ns", v0, iri), src_hasMasterDegreeFrom_c
 PGStudent(iri) :- IRI("ns:ns", v0, iri), src_Psychology_c0(u0, v0), src_Physics_c0(u1, v1), src_PGStudent_c0(u2, v2), v0=v1, v1=v2
 hasPhDProgram(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_hasAuthor_c0(u0, v0), src_hasAuthor_c1(u0, v1), src_hasAssociateProfessor_c0(u1, v2), src_hasPhDProgram_c0(u2, v3), src_hasAssociateProfessor_c1(u1, v4), src_hasPhDProgram_c1(u2, v5), v0=v2, v2=v3, v1=v4, v4=v5
 Institute(iri) :- IRI("ns:ns", v0, iri), src_TeachingAssistant_c0(u0, v0), src_isAssociateProfessorOf_c0(u1, v1), src_Institute_c0(u2, v2), v0=v1, v1=v2
-Linguistics(iri) :- IRI("ns:ns", v0, iri), src_WomanCollege_c0(u0, v0), src_Software_c0(u1, v1), src_CoEdCollege_c0(u2, v2), src_hasPart_c0(u3, v3), src_Linguistics_c0(u4, v4), v0=v1, v1=v2, v2=v3, v3=v4
 MarineScience(iri) :- IRI("ns:ns", v0, iri), src_HumanitiesAndSocial_c0(u0, v0), src_isVisitingProfessorOf_c0(u1, v1), src_TeachingAssistant_c0(u2, v2), src_MarineScience_c0(u3, v3), v0=v1, v1=v2, v2=v3
+Linguistics(iri) :- IRI("ns:ns", v0, iri), src_WomanCollege_c0(u0, v0), src_Software_c0(u1, v1), src_CoEdCollege_c0(u2, v2), src_hasPart_c0(u3, v3), src_Linguistics_c0(u4, v4), v0=v1, v1=v2, v2=v3, v3=v4
 MediaArtsAndSciences(iri) :- IRI("ns:ns", v0, iri), src_History_c0(u0, v0), src_MediaArtsAndSciences_c0(u1, v1), v0=v1
 Faculty(iri) :- IRI("ns:ns", v0, iri), src_BiomedicalEngineering_c0(u0, v0), src_Faculty_c0(u1, v1), v0=v1
 hasMajor(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_hasAlumnus_c0(u0, v0), src_hasAlumnus_c1(u0, v1), src_MarketingManagement_c0(u1, v2), src_BasketBallLover_c0(u2, v3), src_hasMajor_c0(u3, v4), src_hasMajor_c1(u3, v5), v0=v2, v2=v3, v3=v4, v1=v5
@@ -182,7 +182,17 @@ Book(iri) :- IRI("ns:ns", v0, iri), src_orgPublication_c0(u0, v0), src_Humanitie
 Work(iri) :- IRI("ns:ns", v0, iri), src_isAdvisedBy_c0(u0, v0), src_teachesCourse_c0(u1, v1), src_hasProfessor_c0(u2, v2), src_Work_c0(u3, v3), src_isAdvisedBy_c1(u0, v4), src_teachesCourse_c1(u1, v5), src_hasProfessor_c1(u2, v6), v0=v1, v1=v2, v2=v3, v4=v5, v5=v6
 BasketBall(iri) :- IRI("ns:ns", v0, iri), src_AsianArts_c0(u0, v0), src_BasketBall_c0(u1, v1), v0=v1
 offerCourse(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_PeopleWithHobby_c0(u0, v0), src_isWomenCollegeOf_c1(u1, v1), src_isWomenCollegeOf_c0(u1, v2), src_hasResearchGroup_c0(u2, v3), src_UGStudent_c0(u3, v4), src_offerCourse_c0(u4, v5), src_hasResearchGroup_c1(u2, v6), src_offerCourse_c1(u4, v7), v0=v2, v2=v3, v3=v4, v4=v5, v1=v6, v6=v7
-goal() :- hasCollegeDiscipline(x, y), hasMajor(x, y)
+goal() :- NonScience(x), Science(x)
+goal() :- NonScience(x), Geosciences(x)
+goal() :- NonScience(x), Astronomy(x)
+goal() :- NonScience(x), Mathematics(x)
+goal() :- NonScience(x), ComputerScience(x)
+goal() :- NonScience(x), Biology(x)
+goal() :- NonScience(x), MaterialsScience(x)
+goal() :- NonScience(x), MarineScience(x)
+goal() :- NonScience(x), Statistics(x)
+goal() :- NonScience(x), Physics(x)
+goal() :- NonScience(x), Chemistry(x)
 dislikes(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_Reading_c0(u0, v0), src_dislikes_c1(u4, v1), src_Music_c0(u1, v2), src_Professor_c0(u2, v3), src_ProjectManagement_c0(u3, v4), src_dislikes_c0(u4, v5), v0=v2, v2=v3, v3=v4, v4=v5, not(likes(iri1, iri2))
 hasSystemStaff(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_hasAssistantProfessor_c0(u0, v0), src_hasAssistantProfessor_c1(u0, v1), src_isLecturerOf_c0(u1, v2), src_offerCourse_c0(u2, v3), src_hasSystemStaff_c0(u3, v4), src_isLecturerOf_c1(u1, v5), src_offerCourse_c1(u2, v6), src_hasSystemStaff_c1(u3, v7), v0=v2, v2=v3, v3=v4, v1=v5, v5=v6, v6=v7
 Article(iri) :- IRI("ns:ns", v0, iri), src_hasOtherStaff_c0(u0, v0), src_hasPhDProgram_c0(u1, v1), src_Article_c0(u2, v2), src_hasOtherStaff_c1(u0, v3), src_hasPhDProgram_c1(u1, v4), v0=v1, v1=v2, v3=v4

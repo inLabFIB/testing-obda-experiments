@@ -1,4 +1,5 @@
-Ontology name,Experiment Type,Negative Inclusion Rewrite Time (ms)
+Ontology Name,Experiment Type,Negative Inclusion Rewrite Time (ms)
 OWL2Bench,INCONSISTENCY_THREAT,0
-OWL2Bench,PREDICATE_SAT,685
-OWL2Bench,QUERY_SAT,680
+OWL2Bench,PREDICATE_SAT,425
+OWL2Bench,PREDICATE_SAT,441
+OWL2Bench,QUERY_SAT,417

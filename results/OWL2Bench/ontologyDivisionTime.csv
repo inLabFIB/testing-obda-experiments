@@ -1,0 +1,5 @@
+Ontology Name,Experiment Type,Division Ontology Time (ms)
+OWL2Bench,INCONSISTENCY_THREAT,0
+OWL2Bench,PREDICATE_SAT,0
+OWL2Bench,PREDICATE_SAT,0
+OWL2Bench,QUERY_SAT,0

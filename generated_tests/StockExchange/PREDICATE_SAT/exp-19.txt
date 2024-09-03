@@ -18,9 +18,9 @@ PhysicalPerson(iri) :- IRI("ns:ns", v0, iri), src_StockExchangeList_c0(u0, v0), 
 goal() :- usesBroker(x0, x1)
 goal() :- tradesOnBehalfOf(x1, x0)
 goal() :- StockBroker(x1)
-goal() :- StockTrader(x1)
-goal() :- Trader(x1)
 goal() :- Dealer(x1)
+goal() :- Trader(x1)
+goal() :- StockTrader(x1)
 involvesInstrument(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_Acquisition_c0(u0, v0), src_involvesInstrument_c1(u2, v1), src_StockExchangeMember_c0(u1, v2), src_involvesInstrument_c0(u2, v3), v0=v2, v2=v3
 isExecutedFor(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_inverseofhasAddress_c0(u0, v0), src_inverseofhasAddress_c1(u0, v1), src_involvesInstrument_c0(u1, v2), src_Person_c0(u2, v3), src_hasStock_c0(u3, v4), src_isExecutedFor_c0(u4, v5), src_involvesInstrument_c1(u1, v6), src_hasStock_c1(u3, v7), src_isExecutedFor_c1(u4, v8), v0=v2, v2=v3, v3=v4, v4=v5, v1=v6, v6=v7, v7=v8
 Acquisition(iri) :- IRI("ns:ns", v0, iri), src_listsStock_c0(u0, v0), src_inverseofhasAddress_c0(u1, v1), src_Address_c0(u2, v2), src_Acquisition_c0(u3, v3), src_listsStock_c1(u0, v4), src_inverseofhasAddress_c1(u1, v5), v0=v1, v1=v2, v2=v3, v4=v5

@@ -1,4 +1,5 @@
-Ontology name,Experiment Type,Negative Inclusion Rewrite Time (ms)
+Ontology Name,Experiment Type,Negative Inclusion Rewrite Time (ms)
 StockExchange,INCONSISTENCY_THREAT,0
-StockExchange,PREDICATE_SAT,1
-StockExchange,QUERY_SAT,0
+StockExchange,PREDICATE_SAT,0
+StockExchange,PREDICATE_SAT,0
+StockExchange,QUERY_SAT,1

@@ -182,30 +182,7 @@ Book(iri) :- IRI("ns:ns", v0, iri), src_orgPublication_c0(u0, v0), src_Humanitie
 Work(iri) :- IRI("ns:ns", v0, iri), src_isAdvisedBy_c0(u0, v0), src_teachesCourse_c0(u1, v1), src_hasProfessor_c0(u2, v2), src_Work_c0(u3, v3), src_isAdvisedBy_c1(u0, v4), src_teachesCourse_c1(u1, v5), src_hasProfessor_c1(u2, v6), v0=v1, v1=v2, v2=v3, v4=v5, v5=v6
 BasketBall(iri) :- IRI("ns:ns", v0, iri), src_AsianArts_c0(u0, v0), src_BasketBall_c0(u1, v1), v0=v1
 offerCourse(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_PeopleWithHobby_c0(u0, v0), src_isWomenCollegeOf_c1(u1, v1), src_isWomenCollegeOf_c0(u1, v2), src_hasResearchGroup_c0(u2, v3), src_UGStudent_c0(u3, v4), src_offerCourse_c0(u4, v5), src_hasResearchGroup_c1(u2, v6), src_offerCourse_c1(u4, v7), v0=v2, v2=v3, v3=v4, v4=v5, v1=v6, v6=v7
-goal() :- SupportingStaff(x), ResearchAssistant(x)
-goal() :- ClericalStaff(x), ResearchAssistant(x)
-goal() :- SystemStaff(x), ResearchAssistant(x)
-goal() :- hasSupportingStaff(unfTGD0, x), ResearchAssistant(x)
-goal() :- SupportingStaff(x), hasResearchAssistant(unfTGD0, x)
-goal() :- OtherStaff(x), ResearchAssistant(x)
-goal() :- hasClericalStaff(unfTGD0, x), ResearchAssistant(x)
-goal() :- ClericalStaff(x), hasResearchAssistant(unfTGD0, x)
-goal() :- SystemStaff(x), hasResearchAssistant(unfTGD0, x)
-goal() :- hasSystemStaff(unfTGD0, x), ResearchAssistant(x)
-goal() :- hasOtherStaff(unfTGD0, x), ResearchAssistant(x)
-goal() :- hasSupportingStaff(unfTGD0, x), hasResearchAssistant(unfTGD1, x)
-goal() :- SupportingStaff(x), isResearchAssistantOf(x, unfTGD0)
-goal() :- OtherStaff(x), hasResearchAssistant(unfTGD0, x)
-goal() :- hasClericalStaff(unfTGD0, x), hasResearchAssistant(unfTGD1, x)
-goal() :- ClericalStaff(x), isResearchAssistantOf(x, unfTGD0)
-goal() :- SystemStaff(x), isResearchAssistantOf(x, unfTGD0)
-goal() :- hasSystemStaff(unfTGD1, x), hasResearchAssistant(unfTGD0, x)
-goal() :- hasOtherStaff(unfTGD0, x), hasResearchAssistant(unfTGD1, x)
-goal() :- hasSupportingStaff(unfTGD0, x), isResearchAssistantOf(x, unfTGD1)
-goal() :- OtherStaff(x), isResearchAssistantOf(x, unfTGD0)
-goal() :- hasClericalStaff(unfTGD0, x), isResearchAssistantOf(x, unfTGD1)
-goal() :- hasSystemStaff(unfTGD1, x), isResearchAssistantOf(x, unfTGD0)
-goal() :- hasOtherStaff(unfTGD0, x), isResearchAssistantOf(x, unfTGD1)
+goal() :- hasCollegeDiscipline(x, y), hasMajor(x, y)
 dislikes(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_Reading_c0(u0, v0), src_dislikes_c1(u4, v1), src_Music_c0(u1, v2), src_Professor_c0(u2, v3), src_ProjectManagement_c0(u3, v4), src_dislikes_c0(u4, v5), v0=v2, v2=v3, v3=v4, v4=v5, not(likes(iri1, iri2))
 hasSystemStaff(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_hasAssistantProfessor_c0(u0, v0), src_hasAssistantProfessor_c1(u0, v1), src_isLecturerOf_c0(u1, v2), src_offerCourse_c0(u2, v3), src_hasSystemStaff_c0(u3, v4), src_isLecturerOf_c1(u1, v5), src_offerCourse_c1(u2, v6), src_hasSystemStaff_c1(u3, v7), v0=v2, v2=v3, v3=v4, v1=v5, v5=v6, v6=v7
 Article(iri) :- IRI("ns:ns", v0, iri), src_hasOtherStaff_c0(u0, v0), src_hasPhDProgram_c0(u1, v1), src_Article_c0(u2, v2), src_hasOtherStaff_c1(u0, v3), src_hasPhDProgram_c1(u1, v4), v0=v1, v1=v2, v3=v4
@@ -228,8 +205,8 @@ Astronomy(iri) :- IRI("ns:ns", v0, iri), src_History_c0(u0, v0), src_PublicRelat
 SalesManagement(iri) :- IRI("ns:ns", v0, iri), src_hasHead_c0(u0, v0), src_Mathematics_c0(u1, v1), src_SalesManagement_c0(u2, v2), v0=v1, v1=v2
 isSystemStaffOf(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_UGProgram_c0(u0, v0), src_isHeadOf_c1(u1, v1), src_isHeadOf_c0(u1, v2), src_isAssistantProfessorOf_c0(u2, v3), src_evaluatedBy_c0(u3, v4), src_isSystemStaffOf_c0(u4, v5), src_isAssistantProfessorOf_c1(u2, v6), src_evaluatedBy_c1(u3, v7), src_isSystemStaffOf_c1(u4, v8), v0=v2, v2=v3, v3=v4, v4=v5, v1=v6, v6=v7, v7=v8
 hasSupportingStaff(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_Psychology_c0(u0, v0), src_hasUGProgram_c1(u1, v1), src_hasUGProgram_c0(u1, v2), src_hasSupportingStaff_c0(u2, v3), src_hasSupportingStaff_c1(u2, v4), v0=v2, v2=v3, v1=v4
-hasResearchAssistant(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_Engineering_c0(u0, v0), src_hasResearchAssistant_c1(u1, v1), src_hasResearchAssistant_c0(u1, v2), v0=v2
 WomanCollege(iri) :- IRI("ns:ns", v0, iri), src_FootBall_c0(u0, v0), src_isSubOrganizationOf_c0(u1, v1), src_WomanCollege_c0(u2, v2), v0=v1, v1=v2
+hasResearchAssistant(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_Engineering_c0(u0, v0), src_hasResearchAssistant_c1(u1, v1), src_hasResearchAssistant_c0(u1, v2), v0=v2
 Sports(iri) :- IRI("ns:ns", v0, iri), src_University_c0(u0, v0), src_Sports_c0(u1, v1), v0=v1
 hasDean(iri1, iri2) :- IRI("ns:ns", v0, iri1), IRI("ns:ns", v1, iri2), src_hasPhDProgram_c0(u0, v0), src_hasPhDProgram_c1(u0, v1), src_SupplyChainManagement_c0(u1, v2), src_Publication_c0(u2, v3), src_isStudentOf_c0(u3, v4), src_hasDean_c0(u4, v5), src_isStudentOf_c1(u3, v6), src_hasDean_c1(u4, v7), v0=v2, v2=v3, v3=v4, v4=v5, v1=v6, v6=v7
 AssociateProfessor(iri) :- IRI("ns:ns", v0, iri), src_Student_c0(u0, v0), src_College_c0(u1, v1), src_Cricket_c0(u2, v2), src_AssociateProfessor_c0(u3, v3), v0=v1, v1=v2, v2=v3
